@@ -18,7 +18,7 @@ puts [ open "flash:Sw1-Config.tcl" w+ ] {
     99  Void
 }
 foreach {vlan_id vlan_name} $vlan_list {
-    ios_config "vlan $vlan_id" "name $vlan_name"
+    ios_config "vlan $vlan_id" "name $vlan_name"git 
 }
 ##
 ## Configure gigabit ports
@@ -41,3 +41,6 @@ foreach port {
     ios_config "int $port" "spanning-tree portfast" "spanning-tree bpduguard enable" 
     ios_config "int $port" "shutdown"
 }
+write memory
+}
+tclquit
